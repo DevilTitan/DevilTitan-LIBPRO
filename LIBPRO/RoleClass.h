@@ -89,9 +89,4 @@ private:
 	string address;
 	vector<Account> ListOfAccount;
 };
-
-
-
-
-
 #endif
