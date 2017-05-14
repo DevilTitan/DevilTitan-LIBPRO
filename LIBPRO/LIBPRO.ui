@@ -43,8 +43,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#centralWidget{
-	background: url(:/appscreen/Resources/appscreen/login-background.png) center center fixed;
-
+box-shadow: 10px 10px 5px #888888;
+border-image: url(:/appscreen/Resources/appscreen/login-background.png);
 }
 #userForm
 {
@@ -406,7 +406,11 @@ background: rgba(255,255,255,80);
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="passwordLineEdit"/>
+        <widget class="QLineEdit" name="passwordLineEdit">
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
