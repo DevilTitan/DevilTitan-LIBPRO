@@ -43,8 +43,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#centralWidget{
-box-shadow: 10px 10px 5px #888888;
-border-image: url(:/appscreen/Resources/appscreen/login-background.png);
+	background: url(:/appscreen/Resources/appscreen/login-background.png) center center fixed;
+
 }
 #userForm
 {
@@ -61,7 +61,7 @@ QLineEdit{
 border-radius: 3px;
 }
 QLabel{
-font: 10pt &quot;Calibri&quot;;
+font: 10pt &quot;Roboto&quot;;
 }
 
 </string>
@@ -154,8 +154,11 @@ font: 10pt &quot;Calibri&quot;;
       <height>16</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font-style: underline;</string>
+    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;Quên mật khẩu?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;u&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;Quên mật khẩu?&lt;/span&gt;&lt;/u&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="roleLabel">
@@ -296,7 +299,7 @@ background: rgba(255,255,255,80);
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;Người đọc&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Độc giả&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="administratorLabel">
@@ -315,7 +318,7 @@ background: rgba(255,255,255,80);
    <widget class="QLabel" name="databaseLabel">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>420</x>
       <y>390</y>
       <width>91</width>
       <height>16</height>
@@ -407,8 +410,23 @@ background: rgba(255,255,255,80);
        </item>
        <item>
         <widget class="QLineEdit" name="passwordLineEdit">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>195</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
+          <enum>QLineEdit::PasswordEchoOnEdit</enum>
          </property>
         </widget>
        </item>
