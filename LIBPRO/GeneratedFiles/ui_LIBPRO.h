@@ -68,8 +68,8 @@ public:
         LIBPROClass->setLayoutDirection(Qt::LeftToRight);
         LIBPROClass->setAutoFillBackground(false);
         LIBPROClass->setStyleSheet(QLatin1String("#centralWidget{\n"
-"	background: url(:/appscreen/Resources/appscreen/login-background.png) center center fixed;\n"
-"\n"
+"box-shadow: 10px 10px 5px #888888;\n"
+"border-image: url(:/appscreen/Resources/appscreen/login-background.png);\n"
 "}\n"
 "#userForm\n"
 "{\n"
@@ -225,6 +225,7 @@ public:
 
         passwordLineEdit = new QLineEdit(userForm);
         passwordLineEdit->setObjectName(QStringLiteral("passwordLineEdit"));
+        passwordLineEdit->setEchoMode(QLineEdit::Password);
 
         horizontalLayout_2->addWidget(passwordLineEdit);
 
