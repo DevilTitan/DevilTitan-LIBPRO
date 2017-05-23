@@ -1,13 +1,19 @@
-﻿Build started 5/13/2017 5:12:23 PM.
+﻿Build started 5/23/2017 12:34:50 PM.
      1>Project "C:\Users\Kevin\Documents\DevilTitan-LIBPRO\LIBPRO\LIBPRO.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\LIBPRO.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
        CustomBuild:
-         Uic'ing LIBPRO.ui...
+         Uic'ing Librarian.ui...
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\5.8\msvc2015\include /I.\GeneratedFiles\Debug /IC:\Qt\5.8\msvc2015\include\QtCore /IC:\Qt\5.8\msvc2015\include\QtGui /IC:\Qt\5.8\msvc2015\include\QtSql /IC:\Qt\5.8\msvc2015\include\QtUiTools /IC:\Qt\5.8\msvc2015\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_UITOOLS_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Debug\moc_LIBPRO.cpp LIBPRO.cpp main.cpp
-         moc_LIBPRO.cpp
-         LIBPRO.cpp
+         C:\Program Files\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\5.8\msvc2015\include /I.\GeneratedFiles\Debug /IC:\Qt\5.8\msvc2015\include\QtCore /IC:\Qt\5.8\msvc2015\include\QtGui /IC:\Qt\5.8\msvc2015\include\QtSql /IC:\Qt\5.8\msvc2015\include\QtUiTools /IC:\Qt\5.8\msvc2015\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /D QT_UITOOLS_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Debug\moc_Librarian.cpp Librarian.cpp main.cpp
+         moc_Librarian.cpp
+         Librarian.cpp
+     1>Librarian.cpp(45): warning C4566: character represented by universal-character-name '\u1EC3' cannot be represented in the current code page (1252)
+     1>Librarian.cpp(45): warning C4566: character represented by universal-character-name '\u1EBF' cannot be represented in the current code page (1252)
+     1>Librarian.cpp(45): warning C4566: character represented by universal-character-name '\u1ED1' cannot be represented in the current code page (1252)
+     1>Librarian.cpp(45): warning C4566: character represented by universal-character-name '\u0111' cannot be represented in the current code page (1252)
+     1>Librarian.cpp(45): warning C4566: character represented by universal-character-name '\u01B0' cannot be represented in the current code page (1252)
+     1>Librarian.cpp(45): warning C4566: character represented by universal-character-name '\u1EE3' cannot be represented in the current code page (1252)
          main.cpp
          Generating Code...
          All outputs are up-to-date.
@@ -35,4 +41,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:10.51
+Time Elapsed 00:00:12.91
