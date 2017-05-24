@@ -4,16 +4,17 @@ Librarian::Librarian(QWidget *parent)
 	: QWidget(parent)
 {
 	setupUi(this);
+	//1
+	rdb = new QSqlDatabase;
+	*rdb = QSqlDatabase::addDatabase("QMYSQL");
+	rdb->setHostName("127.0.0.1");
+	rdb->setUserName("DevilTitan");
+	rdb->setPassword("DevilTitan");
+	rdb->setDatabaseName("libpro_user");
 
-	rdb = QSqlDatabase::addDatabase("QMYSQL");
-	rdb.setHostName("127.0.0.1");
-	rdb.setUserName("DevilTitan");
-	rdb.setPassword("DevilTitan");
-	rdb.setDatabaseName("libpro_user");
-
-	if (rdb.open()) {
-		QSqlQuery rquery(rdb);
-		if (rquery.exec("SELECT * FROM reader_rent")) {
+	if (rdb->open()) {
+		QSqlQuery rquery(*rdb);
+		if (rquery.exec("SELECT * FROM reader_rent ORDER BY due_date DESC")) {
 			while (rquery.next()) {
 				qDebug() << rquery.value(0) << rquery.value(1) << rquery.value(2) << rquery.value(3) << rquery.value(4);
 
@@ -43,9 +44,16 @@ Librarian::Librarian(QWidget *parent)
 	}
 	else
 		qDebug() << QString(tr("không thể kết nối được"));
+	//2
+	vdb = new QSqlDatabase;
+	*vdb = QSqlDatabase::addDatabase("QMYSQL");
+	vdb->setHostName("127.0.0.1");
+	vdb->setUserName("DevilTitan");
+	vdb->setPassword("devilTitan");
+	vdb->setDatabaseName("reader_violation");
+
 
 }
 
-Librarian::~Librarian()
-{
+Librarian::~Librarian(){
 }

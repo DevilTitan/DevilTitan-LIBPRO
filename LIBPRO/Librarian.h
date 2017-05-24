@@ -16,5 +16,5 @@ public:
 	Librarian(QWidget *parent = Q_NULLPTR);
 	~Librarian();
 private:
-	QSqlDatabase rdb;
+	QSqlDatabase *rdb,*vdb;
 };
