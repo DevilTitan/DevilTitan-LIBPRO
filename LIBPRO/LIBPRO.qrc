@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="/LIBPRO"/>
   <qresource prefix="/appscreen">
+    <file>Resources/appscreen/librarian-background.jpg</file>
     <file>Resources/appscreen/LIBPRO-symbol.png</file>
     <file>Resources/appscreen/login-background.png</file>
     <file>Resources/appscreen/background.png</file>
