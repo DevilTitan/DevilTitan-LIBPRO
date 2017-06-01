@@ -1,57 +1,63 @@
 ﻿#include "Librarian.h"
 
+#include <QPixmap>
+#include <QSqlDatabase>
+#include <QSqlQueryModel>
+#include <QSqlTableModel>
+#include <QDebug>
+#include <QVariant>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <algorithm>
+#include <string>
+#include <QtAlgorithms>
+#include <algorithm>
+#include <QStandardItemModel>
+#include <QSet>
+
 Librarian::Librarian(QWidget *parent)
 	: QWidget(parent)
 {
-	setupUi(this);
-	//1
-	rdb = new QSqlDatabase;
-	*rdb = QSqlDatabase::addDatabase("QMYSQL");
-	rdb->setHostName("127.0.0.1");
-	rdb->setUserName("DevilTitan");
-	rdb->setPassword("DevilTitan");
-	rdb->setDatabaseName("libpro_user");
+	ui.setupUi(this);
+	displayBook(ui);
+	QPixmap bkgnd(":/appscreen/Resources/appscreen/1.png");
+	bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+	QPalette palette;
+	palette.setBrush(QPalette::Background, bkgnd);
+	this->setPalette(palette);
+}
 
-	if (rdb->open()) {
-		QSqlQuery rquery(*rdb);
-		if (rquery.exec("SELECT * FROM reader_rent ORDER BY due_date DESC")) {
-			while (rquery.next()) {
-				qDebug() << rquery.value(0) << rquery.value(1) << rquery.value(2) << rquery.value(3) << rquery.value(4);
+void displayBook(Ui::Librarian ui)
 
-				QString user_id = rquery.value(0).toString();
-				QString borrow_book = rquery.value(1).toString();
-				QString isbn = rquery.value(2).toString();
-				QString borrow_date = rquery.value(3).toString();
-				QString due_date = rquery.value(4).toString();
+{
+	QSqlDatabase rdb;
+	rdb = QSqlDatabase::addDatabase("QMYSQL");
+	rdb.setHostName("127.0.0.1");
+	rdb.setUserName("DevilTitan");
+	rdb.setPassword("DevilTitan");
+	rdb.setDatabaseName("libpro_user");
+	rdb.open();
 
-				this->borrowTable->setRowCount(this->borrowTable->rowCount() + 1);
+	QSqlQuery *qry = new QSqlQuery;
+	qry->prepare("SELECT * FROM reader_rent ORDER BY due_date DESC");
+	qry->exec();
 
-				QTableWidgetItem *user_idItem = new QTableWidgetItem(user_id);
-				QTableWidgetItem *borrow_bookItem = new QTableWidgetItem(borrow_book);
-				QTableWidgetItem *isbnItem = new QTableWidgetItem(isbn);
-				QTableWidgetItem *borrow_dateItem = new QTableWidgetItem(borrow_date);
-				QTableWidgetItem *due_dateItem = new QTableWidgetItem(due_date);
+	QSqlQueryModel * modal = new QSqlQueryModel;
+	modal->setQuery(*qry);
 
-				int row = this->borrowTable->rowCount();
+	ui.borrowTable->setModel(modal);
 
-				this->borrowTable->setItem(row - 1, 0, user_idItem);
-				this->borrowTable->setItem(row - 1, 1, borrow_bookItem);
-				this->borrowTable->setItem(row - 1, 2, isbnItem);
-				this->borrowTable->setItem(row - 1, 3, borrow_dateItem);
-				this->borrowTable->setItem(row - 1, 4, due_dateItem);
-			}
-		}
-	}
-	else
-		qDebug() << QString(tr("không thể kết nối được"));
-	//2
-	vdb = new QSqlDatabase;
-	*vdb = QSqlDatabase::addDatabase("QMYSQL");
-	vdb->setHostName("127.0.0.1");
-	vdb->setUserName("DevilTitan");
-	vdb->setPassword("devilTitan");
-	vdb->setDatabaseName("reader_violation");
 
+	ui.borrowTable->resizeColumnToContents(1);
+	ui.borrowTable->setColumnWidth(0, 380);
+	ui.borrowTable->setColumnWidth(1, 165);
+	ui.borrowTable->setColumnWidth(2, 75);
+	ui.borrowTable->setColumnWidth(3, 50);
+
+	modal->setHeaderData(1, Qt::Horizontal, QObject::tr("Tên sách"));
+	modal->setHeaderData(2, Qt::Horizontal, QObject::tr("Tác giả"));
+	modal->setHeaderData(5, Qt::Horizontal, QObject::tr("Số lượng"));
+	modal->setHeaderData(6, Qt::Horizontal, QObject::tr("Xếp hạng"));
 
 }
 
