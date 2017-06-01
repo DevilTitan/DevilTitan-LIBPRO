@@ -29,7 +29,7 @@
     <attribute name="title">
      <string>Danh sách mượn sách</string>
     </attribute>
-    <widget class="QTableWidget" name="borrowTable">
+    <widget class="QTableView" name="borrowTable">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -44,51 +44,11 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <attribute name="horizontalHeaderDefaultSectionSize">
+     <attribute name="horizontalHeaderMinimumSectionSize">
       <number>200</number>
      </attribute>
-     <column>
-      <property name="text">
-       <string>Mã số độc giả</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Tên sách mượn</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Mã số sách</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Ngày mượn</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Ngày hết hạn</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignCenter</set>
-      </property>
-     </column>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -246,7 +206,7 @@
       </property>
      </column>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -348,14 +308,6 @@
       </item>
      </layout>
     </widget>
-    <zorder>tableWidget</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>layoutWidget</zorder>
-    <zorder>lineEdit_3</zorder>
-    <zorder>lineEdit_6</zorder>
-    <zorder>lineEdit_7</zorder>
-    <zorder>verticalSpacer</zorder>
-    <zorder>verticalSpacer_2</zorder>
    </widget>
   </widget>
  </widget>

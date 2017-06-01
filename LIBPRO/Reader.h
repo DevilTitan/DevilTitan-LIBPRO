@@ -1,14 +1,16 @@
 #pragma once
 
-#include <QWidget>
+#include "book.h"
+#include "borrowbook.h"
 #include "ui_Reader.h"
+
+#include <QWidget>
 #include <QVector>
 #include <QString>
 #include <QSqlDatabase>
 #include <QStandardItemModel>
 #include <QMap>
-#include "book.h"
-#include "borrowbook.h"
+
 
 
 class Reader : public QWidget
@@ -29,11 +31,7 @@ private slots:
 
     void on_addbtn_clicked();
 
-
-
-
-
-    void on_bookListbtn_clicked();
+	void on_bookListbtn_clicked();
 
     void on_removebtn_clicked();
 

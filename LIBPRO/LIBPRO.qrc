@@ -3,8 +3,10 @@
   <qresource prefix="/appscreen">
     <file>Resources/appscreen/LIBPRO-symbol.png</file>
     <file>Resources/appscreen/login-background.png</file>
+    <file>Resources/appscreen/background.png</file>
   </qresource>
   <qresource prefix="/icon">
+    <file>Resources/icon/LIBPRO-icon-white.png</file>
     <file>Resources/icon/administrator.png</file>
     <file>Resources/icon/dataProcessor.png</file>
     <file>Resources/icon/LIBPRO-icon.png</file>
