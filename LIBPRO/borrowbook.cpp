@@ -2,13 +2,39 @@
 #include "ui_borrowbook.h"
 #include <QStandardItemModel>
 #include <QTableView>
+#include "dialog.h"
+#include "ui_dialog.h"
 #include <QSqlQuery>
+#include "Reader.cpp"
 
+QStandardItemModel* createmodel(QObject* parent,QMap<QString,int> borrow)
+{
+    const int numRows = borrow.size();
+    const int numColumns = 2;
+    auto it = borrow.begin();
 
+    QStandardItemModel* model = new QStandardItemModel(numRows, numColumns);
+    for (int row = 0; row < numRows; ++row)
+    {
 
+            QString book = it.key();
+            QStandardItem* bookitm = new QStandardItem(book);
+            model->setItem(row, 0 , bookitm);
 
-borrowBook::borrowBook(QWidget* parent, QMap<QString,int>& _borrow,Reader* _par):
-QDialog(parent),borrow(_borrow),par(_par),ui(new Ui::borrowBook)
+            QString number = QString::number(it.value());
+            QStandardItem* numberitm = new QStandardItem(number);
+            model->setItem(row, 1 , numberitm);
+
+            ++it;
+
+     }
+
+    return model;
+}
+
+borrowBook::borrowBook(QWidget* parent, QMap<QString,int> _borrow,Ui::Reader _par):
+QDialog(parent),borrow(_borrow),par(_par),
+ui(new Ui::borrowBook)
 
 {
 
@@ -16,44 +42,44 @@ QDialog(parent),borrow(_borrow),par(_par),ui(new Ui::borrowBook)
     this->borrow=_borrow;
     ui->bookList->setModel(createmodel(ui->bookList,this->borrow));
     ui->bookList->setColumnWidth(0,495);
-    clearptr = &_borrow;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
-
 
 borrowBook::~borrowBook()
 {
     delete ui;
-    par->displaybook();
 }
-
 
 void borrowBook::on_requestbtn_clicked()
 {
-    par->open();
-
-    for (auto it = borrow.begin(); it!=borrow.end(); ++it) // reset value for database
+    for (auto it = borrow.begin(); it!=borrow.end(); ++it)
     {
 
          int currentQuantity;
+         QSqlQuery selectquantity ("select * from book_info where book_name = '" + it.key()+"'");
+         selectquantity.exec();
 
-         QSqlQuery *selectquantity = new QSqlQuery;
-         selectquantity->prepare("select * from book_info where book_name = '" + it.key()+"'");
-
-
-         if(selectquantity->exec())
-         {
-             while(selectquantity->next())
-             {
-
-                 currentQuantity = selectquantity->value(5).toInt();
-
-             }
-         }
-
-
-
-
+         currentQuantity = selectquantity.value(5).toInt();
 
          int x = currentQuantity + it.value();
          QSqlQuery query("UPDATE book_info SET quantity = " + QString::number(x) + " WHERE book_name = '" +it.key()+"'");
@@ -61,11 +87,6 @@ void borrowBook::on_requestbtn_clicked()
 
 
     }
-
-
-    clear(); // clear borrow book list
-
-
-
+    displayBook(par);
     this->close();
 }
