@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>borrowBook</class>
+ <widget class="QWidget" name="borrowBook">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>523</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Borrow new book</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="LIBPRO.qrc">
+    <normaloff>:/icon/Resources/icon/LP icon.png</normaloff>:/icon/Resources/icon/LP icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*#borrowBook{
+background-image: url(:/appscreen/Resources/appscreen/2.jpg);}*/
+QPushButton {
+font-size: 20px;
+font-family: Roboto; 
+background-color: rgba(46, 150, 223, 0.8);
+border: 0;
+color: white;
+border-radius: 3px;
+}
+
+QPushButton:hover {
+background-color: rgba(0, 189, 155, 0.8);
+}
+
+QPushButton:pressed {
+background-color: rgb(24, 205, 108);
+}
+</string>
+  </property>
+  <widget class="QPushButton" name="requestbtn">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>390</y>
+     <width>151</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 20px;</string>
+   </property>
+   <property name="text">
+    <string>SEND REQUEST</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelbtn">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>440</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 15px;</string>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="removebtn">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>390</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 15px;
+</string>
+   </property>
+   <property name="text">
+    <string>Remove All</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="increasebtn">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>30</y>
+     <width>94</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 15px;</string>
+   </property>
+   <property name="text">
+    <string>Increase</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="decreasebtn">
+   <property name="geometry">
+    <rect>
+     <x>690</x>
+     <y>90</y>
+     <width>94</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 15px;</string>
+   </property>
+   <property name="text">
+    <string>Decrease</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="bookList">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>641</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255,255,255,0.5);
+gridline-color:white;
+selection-background-color:rgba(55,55,55,0.3);
+font-family:Ubuntu Light</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="LIBPRO.qrc"/>
+ </resources>
+ <connections/>
+</ui>

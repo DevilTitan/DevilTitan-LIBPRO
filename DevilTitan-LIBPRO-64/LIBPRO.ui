@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LIBPRO</class>
+ <widget class="QMainWindow" name="LIBPRO">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>672</width>
+    <height>454</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>LIBPRO</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="LIBPRO.qrc">
+    <normaloff>:/icon/Resources/icon/LP icon.png</normaloff>:/icon/Resources/icon/LP icon.png</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralWidget{
+box-shadow: 10px 10px 5px #888888;
+border-image: url(:/appscreen/Resources/appscreen/background.png);
+
+}
+#userForm
+{
+color: rgba(74, 252, 255,80);
+border-radius: 8px;
+}
+
+QPushButton
+{
+color: white;
+border-radius: 3px;
+}
+
+QLineEdit{
+border-radius: 3px;
+}
+QLabel{
+font: 10pt &quot;Calibri&quot;;
+}
+
+</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>24</width>
+    <height>24</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>611</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#frame{
+background-color: rgba(73, 189, 221,0.3);
+border-radius: 5px;
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="reader">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>120</y>
+       <width>111</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#readerAccess{
+border-image: url(:/icon/Resources/icon/reader.png);
+}
+#readerAccess:hover{
+background: rgba(255,255,255,80);
+}
+#readerAccess:focus{
+background: rgba(255,255,255,80);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="LIBPRO.qrc">
+       <normaloff>:/icon/Resources/icon/reader.png</normaloff>:/icon/Resources/icon/reader.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="librarian">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>120</y>
+       <width>101</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#librarianAccess{
+	border-image: url(:/icon/Resources/icon/librarian.png);
+}
+#librarianAccess:hover{
+background: rgba(255,255,255,80);
+}
+#librarianAccess:focus{
+background: rgba(255,255,255,80);
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="LIBPRO.qrc">
+       <normaloff>:/icon/Resources/icon/librarian.png</normaloff>:/icon/Resources/icon/librarian.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="readerLabel">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>230</y>
+       <width>71</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt&quot;Segoe UI&quot;;
+font-weight:600;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400; color:#ffffff;&quot;&gt;Reader&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="librarianLabel">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>230</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt&quot;Segoe UI&quot;;
+font-weight:600;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400; color:#ffffff;&quot;&gt;Librarian&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="data">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>120</y>
+       <width>111</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#dataProcessorAccess{
+	border-image: url(:/icon/Resources/icon/dataProcessor.png);
+}
+#dataProcessorAccess:hover{
+background: rgba(255,255,255,80);
+}
+#dataProcessorAccess:focus{
+background: rgba(255,255,255,80);
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="LIBPRO.qrc">
+       <normaloff>:/icon/Resources/icon/dataProcessor.png</normaloff>:/icon/Resources/icon/dataProcessor.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="databaseLabel">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>230</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt&quot;Segoe UI&quot;;
+font-weight:600;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400; color:#ffffff;&quot;&gt;Data Processor&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="admin">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>120</y>
+       <width>111</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#administratorAccess{
+	border-image: url(:/icon/Resources/icon/administrator.png);
+}
+#administratorAccess:hover{
+background: rgba(255,255,255,80);
+}
+#administratorAccess:focus{
+background: rgba(255,255,255,80);
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="LIBPRO.qrc">
+       <normaloff>:/icon/Resources/icon/administrator.png</normaloff>:/icon/Resources/icon/administrator.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="administratorLabel">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>230</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt&quot;Segoe UI&quot;;
+font-weight:600;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400; color:#ffffff;&quot;&gt;Administrator&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="roleLabel">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>70</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#roleLabel{
+font: 10pt&quot;Segoe UI&quot;;
+font-weight:600;
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400; color:#ffffff;&quot;&gt;Choose your role:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="loginButton">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>320</y>
+       <width>171</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#loginButton {
+	
+color: white;
+
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #888);
+min-width: 80px;
+background-color: rgba(255,255,255, .5);
+
+border: 1px solid #555;
+border-radius: 11px;
+padding: 5px;
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #fff);
+min-width: 80px;background-color: rgba(255,255,255, 1);
+
+border-radius:0;
+border-left:10;
+border-color:white;
+color:white;
+font-family:&quot;Roboto&quot;;
+font-weight:600;
+border-radius:4px;
+
+font-size:16px;
+border: 2px solid rgb(77, 166, 255);
+color:rgb(77,166,255);
+}
+
+#loginButton:hover {
+background: qradialgradient(cx: 0.3, cy: -0.4,
+fx: 0.3, fy: -0.4,
+radius: 1.35, stop: 0 #fff, stop: 1 #bbb);
+background-color:rgba(77, 166, 255,0.6);
+border:0px;
+color:white;
+}
+
+#loginButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}</string>
+     </property>
+     <property name="text">
+      <string>CHOOSE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="errorlbl">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>20</y>
+       <width>531</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid red;
+background-color:rgba(255, 255, 255, 0.6);
+border-radius: 3px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="LIBPRO.qrc"/>
+ </resources>
+ <connections/>
+</ui>

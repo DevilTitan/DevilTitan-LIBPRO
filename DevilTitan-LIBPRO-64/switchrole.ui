@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SwitchRole</class>
+ <widget class="QDialog" name="SwitchRole">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>683</width>
+    <height>313</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Switch your role</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="LIBPRO.qrc">
+    <normaloff>:/icon/Resources/icon/LP icon.png</normaloff>:/icon/Resources/icon/LP icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:hover {
+background: qradialgradient(cx: 0.2, cy: -0.4,
+fx: 0.1, fy: -0.4,
+radius: 0.7, stop: 0 #43abc9, stop: 1 rgba(14, 149, 186));
+color: white;
+}
+
+QPushButton:pressed {
+background: qradialgradient(cx: 0.4, cy: -0.1,
+fx: 0.4, fy: -0.1,
+radius: 1.35, stop: 0 #fff, stop: 1 #ddd);
+}
+QPushButton {
+border: 0px;
+font: 87 8pt &quot;Ubuntu Light&quot;;
+background-color: rgba(12, 60, 85, 0.7);
+border-radius:3px;
+font-size:22px;
+}
+QLabel
+{
+font-family: &quot;Ubuntu Light&quot;;
+font-size: 13px;
+color: white;
+}
+#errorlbl
+{
+border: 2px solid red;
+color: red;
+border: 0;
+background-color: transparent;
+}</string>
+  </property>
+  <widget class="QPushButton" name="librarian">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>40</y>
+     <width>111</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="LIBPRO.qrc">
+     <normaloff>:/icon/Resources/icon/female-professor-reading-a-book.png</normaloff>:/icon/Resources/icon/female-professor-reading-a-book.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>70</width>
+     <height>70</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="admin">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>40</y>
+     <width>111</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="LIBPRO.qrc">
+     <normaloff>:/icon/Resources/icon/telephone-operator.png</normaloff>:/icon/Resources/icon/telephone-operator.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>70</width>
+     <height>70</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="data">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>40</y>
+     <width>111</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="LIBPRO.qrc">
+     <normaloff>:/icon/Resources/icon/industry-worker-with-cap-protection-and-a-laptop.png</normaloff>:/icon/Resources/icon/industry-worker-with-cap-protection-and-a-laptop.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="continue_2">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>250</y>
+     <width>94</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font-size: 12px;</string>
+   </property>
+   <property name="text">
+    <string>CONTINUE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="reader">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>40</y>
+     <width>111</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="LIBPRO.qrc">
+     <normaloff>:/icon/Resources/icon/reading (1).png</normaloff>:/icon/Resources/icon/reading (1).png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>70</width>
+     <height>70</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>250</y>
+     <width>94</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font-size: 12px;</string>
+   </property>
+   <property name="text">
+    <string>CANCEL</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="errorlbl">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>190</y>
+     <width>381</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 10pt &quot;Segoe UI&quot;;
+font-weight:500;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>160</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>READER</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>160</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>LIBRARIAN</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>160</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string> ADMINISTRATOR</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>160</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DATA PROCESSOR</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="LIBPRO.qrc"/>
+ </resources>
+ <connections/>
+</ui>
